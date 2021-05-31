@@ -31,24 +31,17 @@ console.log(changeCase('Hybris'));
 const filterNonUnique = (array) => {
   let resultArray = [];
   let counter;
+  let arraySize = array.length - 1;
 
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      counter = 0;
-
+  for (let i = 0; i <= arraySize; i++) {
+    counter = 0;
+    for (let j = 0; j <= arraySize; j++) {
       if (array[i] === array[j]) {
         counter++;
       }
-
-      counter === 1 && !resultArray.includes(array[i]) ? resultArray.push(array[i]) : null;
+      counter === 1 && j === arraySize ? resultArray.push(array[i]) : null;
     }
   }
-
-  // for (let item of array) {
-  //   if (!resultArray.includes(item)) {
-  //     resultArray.push(item);
-  //   }
-  // }
 
   return resultArray;
 };
