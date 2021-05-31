@@ -24,19 +24,31 @@ console.log(changeCase('Hybris'));
  * Ex.2: Filter out the non-unique values in an array
  * Понял, что надо сравнивать каждый с каждым, но первое решение вообще меня запутало.
  * Решил поискать примеры. Наткнулся на https://learn.javascript.ru/task/array-unique.
- * Надо как-то фильтровать, но я не понимаю по какой логике — фор внутри фора ерунда. 
+ * Надо как-то фильтровать, но я не понимаю по какой логике — фор внутри фора ерунда.
  * Не выходит...
+ * Добился некоторого сравнения, но не получается исключить дубли. Логика на сравнение хромает.
  */
 const filterNonUnique = (array) => {
   let resultArray = [];
+  let counter;
 
-  for (let item of array) {
-    if (!resultArray.includes(item)) {
-      resultArray.push(item);
-    } else {
-      // resultArray.remove(item);
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      counter = 0;
+
+      if (array[i] === array[j]) {
+        counter++;
+      }
+
+      counter === 1 && !resultArray.includes(array[i]) ? resultArray.push(array[i]) : null;
     }
   }
+
+  // for (let item of array) {
+  //   if (!resultArray.includes(item)) {
+  //     resultArray.push(item);
+  //   }
+  // }
 
   return resultArray;
 };
