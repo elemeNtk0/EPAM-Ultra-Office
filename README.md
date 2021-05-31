@@ -15,7 +15,7 @@ Basic concepts of Javascript language.
 -----
 ### Задачи:
   - [x] Ex.1 `changeCase`.
-  - [ ] Ex.2 — `filterNonUnique` догадки: надо фильтровать, но как не понимаю. Ищу примеры, либо с использованием `Set`, либо с ним и ещё с `Reduce`. Поэтому путаница. Простыми решениями «в лоб» не получается.
+  - [x] Ex.2 — `filterNonUnique`.
   - [ ] Ex.3 —
   - [ ] Ex.4 —
   - [ ] Ex.5 —
