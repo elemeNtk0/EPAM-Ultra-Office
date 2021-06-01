@@ -16,7 +16,7 @@ Basic concepts of Javascript language.
   - [x] Ex.1 — `changeCase`.
   - [x] Ex.2 — `filterNonUnique`.
   - [x] Ex.3 — `alphabetSort`.
-  - [ ] Ex.4 —
+  - [x] Ex.4 — `getSecondMinimum`.
   - [ ] Ex.5 —
   - [ ] Ex.6 —
   - [ ] Ex.7 —

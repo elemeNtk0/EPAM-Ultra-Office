@@ -104,6 +104,7 @@ console.log(alphabetSort('Python')); // Output: ‘Phnoty’
 // Подсмотрел решение на стековерфлоу. Надотразобраться как происходит перезапись
 // В последнем примере должен выводить 0 
 // 0 тоже integer. Почему он не включается в выборку? Как происходит проверка a - b ?
+// Finish! Перечитал как работает sort() и понял, что он уже сортирует и мне просто второй элемент массива надо вернуть
 const getSecondMinimum = (arr) => {
   arr.sort((a, b) => a - b);
   return arr[1];
@@ -111,4 +112,4 @@ const getSecondMinimum = (arr) => {
 
 console.log(getSecondMinimum([5, 0, 7, 3, 8])); // Output: 3
 console.log(getSecondMinimum([5, 0, 2, 1, 7, 3, 8])); // Output: 1
-console.log(getSecondMinimum([5, 1, 2, 0, 7, 3, 6])); // Output: 0 ?????
+console.log(getSecondMinimum([5, 1, 2, 0, 7, 3, 6])); // Output: 1
