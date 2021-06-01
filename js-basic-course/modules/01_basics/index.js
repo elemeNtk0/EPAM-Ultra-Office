@@ -55,7 +55,7 @@ console.log(filterNonUnique([1, 2, 2, 3, 4, 4, 5])); // Output: [1,3,5]
 console.log(filterNonUnique([1, 2, 3, 4])); // Output: [1,2,3,4]
 
 /**
- * Sort string in alphabetical order
+ * Ex.3: Sort string in alphabetical order
  * Прибегнул к поиску `sort()`.
  * Не понимаю, почему не работает с простым решением `return a - b`...
  * Получается, что это такая же запись. Но не сортирует такой функцией сравнения
@@ -79,7 +79,7 @@ const alphabetSort = (str) => {
 console.log(alphabetSort('Python')); // Output: ‘Phnoty’
 
 /**
- * Get min integer
+ * Ex.4: Get min integer
  */
 const getSecondMinimum = (arr) => {
   let result,
