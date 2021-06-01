@@ -56,7 +56,7 @@ console.log(filterNonUnique([1, 2, 3, 4])); // Output: [1,2,3,4]
 
 /**
  * Sort string in alphabetical order
- * Прибегнул к поиску `sort()`. 
+ * Прибегнул к поиску `sort()`.
  * Не понимаю, почему не работает с простым решением `return a - b`...
  * Получается, что это такая же запись. Но не сортирует такой функцией сравнения
  * так же не понял, почему после функции `sort` нельзя сразу добавить `.join('')` и всё это обернуть в return
@@ -77,3 +77,22 @@ const alphabetSort = (str) => {
 };
 
 console.log(alphabetSort('Python')); // Output: ‘Phnoty’
+
+/**
+ * Get min integer
+ */
+const getSecondMinimum = (arr) => {
+  let result,
+    counter = 0;
+  for (let i = 0; i < arr; i++) {
+    for (let j = 0; j < arr; j++) {
+      if (arr[i] < arr[j] && counter < 2) {
+        result = arr[i];
+        counter++;
+      }
+    }
+  }
+  return result;
+};
+
+console.log(getSecondMinimum([5,0,7,3,8])); // Output: 3 
