@@ -81,23 +81,33 @@ console.log(alphabetSort('Python')); // Output: ‘Phnoty’
 /**
  * Ex.4: Get min integer
  */
+// const getSecondMinimum = (arr) => {
+//   let result,
+//     counter = 0;
+//   arr.sort(function (a, b) {
+//     if (a > b) {
+//       return -1;
+//     }
+//     if (a < b) {
+//       counter++;
+//       result = a;
+//       // console.log('a:' + a + ' < ' + 'b:' + b + '   counter:' + counter);
+//       if (counter == 2) return 1;
+//       else return 0;
+//     }
+//     // return 0;
+//   });
+//   return result;
+// };
+
+// Подсмотрел решение на стековерфлоу. Надотразобраться как происходит перезапись
+// В последнем примере должен выводить 0 
+// 0 тоже integer. Почему он не включается в выборку? Как происходит проверка a - b ?
 const getSecondMinimum = (arr) => {
-  let result,
-    counter = 0;
-  arr.sort(function (a, b) {
-    if (a > b) {
-      return -1;
-    }
-    if (a < b) {
-      counter++;
-      result = a;
-      // console.log('a:' + a + ' < ' + 'b:' + b + '   counter:' + counter);
-      if (counter == 2) return 1;
-      else return 0;
-    }
-    // return 0;
-  });
-  return result;
+  arr.sort((a, b) => a - b);
+  return arr[1];
 };
 
-console.log(getSecondMinimum([5, 0, 1, 2, 4, 7, 3, 8])); // Output: 3
+console.log(getSecondMinimum([5, 0, 7, 3, 8])); // Output: 3
+console.log(getSecondMinimum([5, 0, 2, 1, 7, 3, 8])); // Output: 1
+console.log(getSecondMinimum([5, 1, 2, 0, 7, 3, 6])); // Output: 0 ?????
