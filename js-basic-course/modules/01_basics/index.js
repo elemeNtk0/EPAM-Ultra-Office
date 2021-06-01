@@ -84,15 +84,20 @@ console.log(alphabetSort('Python')); // Output: ‘Phnoty’
 const getSecondMinimum = (arr) => {
   let result,
     counter = 0;
-  for (let i = 0; i < arr; i++) {
-    for (let j = 0; j < arr; j++) {
-      if (arr[i] < arr[j] && counter < 2) {
-        result = arr[i];
-        counter++;
-      }
+  arr.sort(function (a, b) {
+    if (a > b) {
+      return -1;
     }
-  }
+    if (a < b) {
+      counter++;
+      result = a;
+      // console.log('a:' + a + ' < ' + 'b:' + b + '   counter:' + counter);
+      if (counter == 2) return 1;
+      else return 0;
+    }
+    // return 0;
+  });
   return result;
 };
 
-console.log(getSecondMinimum([5,0,7,3,8])); // Output: 3 
+console.log(getSecondMinimum([5, 0, 1, 2, 4, 7, 3, 8])); // Output: 3
