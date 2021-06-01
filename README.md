@@ -15,7 +15,7 @@ Basic concepts of Javascript language.
 ### Задачи:
   - [x] Ex.1 — `changeCase`.
   - [x] Ex.2 — `filterNonUnique`.
-  - [ ] Ex.3 —
+  - [x] Ex.3 — `alphabetSort`.
   - [ ] Ex.4 —
   - [ ] Ex.5 —
   - [ ] Ex.6 —

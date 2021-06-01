@@ -27,9 +27,9 @@ console.log(changeCase('Hybris'));
  * Надо как-то фильтровать, но я не понимаю по какой логике — фор внутри фора ерунда.
  * Не выходит...
  * Добился некоторого сравнения, но не получается исключить дубли. Логика на сравнение хромает.
- * 
- * 
- * 
+ *
+ *
+ *
  * Спустя N времени добил логику, "подогнав" под примеры. Понял, что обнуление счётчика было не в том цикле.
  * НО через фильтр так и не понял как сделать  (((
  */
@@ -53,3 +53,27 @@ const filterNonUnique = (array) => {
 
 console.log(filterNonUnique([1, 2, 2, 3, 4, 4, 5])); // Output: [1,3,5]
 console.log(filterNonUnique([1, 2, 3, 4])); // Output: [1,2,3,4]
+
+/**
+ * Sort string in alphabetical order
+ * Прибегнул к поиску sort. 
+ * Не понимаю, почему не работает с простым решением `return a - b`...
+ * Получается, что это такая же запись. Но не сортирует такой функцией сравнения
+ * так же не понял, почему после функции `sort` нельзя сразу добавить `.join('')` и всё это обернуть в return
+ */
+const alphabetSort = (str) => {
+  // let strSorted = str;
+  let strSorted = str.split('');
+  strSorted.sort(function (a, b) {
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
+    return 0;
+  });
+  return strSorted.join('');
+};
+
+console.log(alphabetSort('Python')); // Output: ‘Phnoty’
