@@ -80,6 +80,7 @@ console.log(alphabetSort('Python')); // Output: ‘Phnoty’
 
 /**
  * Ex.4: Get min integer
+ * Write function which gets array of integers and returns second minimum value
  */
 // const getSecondMinimum = (arr) => {
 //   let result,
