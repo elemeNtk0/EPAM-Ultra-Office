@@ -91,3 +91,19 @@ const getSecondMinimum = (arr) => {
 console.log(getSecondMinimum([5, 0, 7, 3, 8])); // Output: 3
 console.log(getSecondMinimum([5, 0, 2, 1, 7, 3, 8])); // Output: 1
 console.log(getSecondMinimum([5, 1, 2, 0, 7, 3, 6])); // Output: 1
+
+/**
+ * Ex.5: Double every even integer
+ * Write function which gets array of integers and returns another array of integers where every even number is doubled
+ */
+const doubleEveryEven = (arr) => {
+  let result = [];
+
+  arr.forEach((item) => {
+    item % 2 === 0 ? result.push(item * 2) : result.push(item);
+  });
+
+  return result;
+};
+
+console.log(doubleEveryEven([2, 0, 7, 3, 8, 4])); // Output: [4,0,7,3,16,8]
