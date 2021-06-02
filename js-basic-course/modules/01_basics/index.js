@@ -44,7 +44,7 @@ const filterNonUnique = (array) => {
       if (array[i] === array[j]) {
         counter++;
       }
-      counter === 1 && j === arraySize ? resultArray.push(array[i]) : null;
+      if (counter === 1 && j === arraySize) resultArray.push(array[i]);
     }
   }
 
@@ -107,3 +107,40 @@ const doubleEveryEven = (arr) => {
 };
 
 console.log(doubleEveryEven([2, 0, 7, 3, 8, 4])); // Output: [4,0,7,3,16,8]
+
+/**
+ * Ex.6: Create array with all possible pairs of two arrays
+ * Write a JavaScript program to create a new array out of the two supplied by creating each possible pair from the arrays.
+ * Нашёл решение «Декартово произведение» по этой задаче.
+ * const cartesian =
+  (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [...d, e])), [[]]);
+ */
+const getArrayElementsPairs = (arr1, arr2) => {
+  let result = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      result.push([arr1[i], arr2[j]]);
+    }
+  }
+
+  return result;
+};
+
+console.log(getArrayElementsPairs([1, 2], ['a', 'b'])); // Output: [[1, “a”], [1, “b”], [2, “a”], [2, “b”]]
+
+// let obj = { here: { is: 'an' }, object: 2 };
+// let obj2 = obj;
+// let obj3 = { here: { is: 'an' }, object: 2 };
+// console.log(obj === obj3);
+
+// прочитать:
+// obj.keys
+// typeOf
+// Рекурсия (( Смотреть, что она возвращает
+
+// Сделать для начала сравнение с простыми обьектами `a: 1, b: 2`
+
+console.log(deepEqual(obj, obj)); // Output: true
+console.log(deepEqual(obj, { here: 1, object: 2 })); // Output: false
+console.log(deepEqual(obj, { here: { is: 'an' }, object: 2 })); // Output: true
